@@ -1,0 +1,11 @@
+
+Configure Event Notifications
+
+Event notifications for your S3 bucket notify Snowpipe when new data is available to load. 
+There are a variety of ways to configure event notifications in AWS S3. We have a section dedicated to the options here.
+
+For this example, we'll be using SQS queues to deliver event notifications. First head over the S3 console. Click into the relevant bucket, then tab over to "Properties". Complete the fields as follows:
+
+	Event Name: Name of the event notification (e.g. Auto-ingest Snowflake).
+	Event types: Select "All object create events" option.
+	Destination: Select SQS Queue, then "Enter SQS queue ARN", and paste the SQS queue name from your SHOW PIPES output. Now Snowpipe with auto-ingest is operational!
