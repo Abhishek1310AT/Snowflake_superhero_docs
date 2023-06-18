@@ -1,0 +1,21 @@
+{
+  "Name": "Aman Gupta",
+  "family_detail": [
+    {
+      "Name": "Avinash Gupta",
+      "Relationship": "Father",
+    },
+    {
+      "Name": "Lata Gupta",
+      "Relationship": "Mother",
+    },
+    {
+      "Name": "Shrishti Gupta",
+      "Relationship": "Sister",
+    },
+    {
+      "Name": "Bobin Gupta",
+      "Relationship": "Brother",
+    }
+  ]
+}

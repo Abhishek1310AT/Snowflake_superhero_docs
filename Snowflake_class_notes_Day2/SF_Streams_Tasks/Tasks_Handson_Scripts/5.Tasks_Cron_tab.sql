@@ -1,0 +1,76 @@
+CREATE OR REPLACE TRANSIENT DATABASE TASK_DB;
+
+// Prepare table
+CREATE OR REPLACE TABLE CUSTOMERS (
+    CUSTOMER_ID INT AUTOINCREMENT START = 1 INCREMENT =1,
+    FIRST_NAME VARCHAR(40) DEFAULT 'SREENIVAS' ,
+    CREATE_DATE DATE)
+    
+    
+SELECT * FROM CUSTOMERS;
+
+SELECT CURRENT_TIMESTAMP;
+    
+    
+// Create task
+CREATE OR REPLACE TASK CUSTOMER_INSERT
+    WAREHOUSE = COMPUTE_WH
+    SCHEDULE = '1 MINUTE'
+    AS 
+    INSERT INTO CUSTOMERS(CREATE_DATE) VALUES(CURRENT_TIMESTAMP);
+    
+
+SHOW TASKS;
+
+// Task starting and suspending
+ALTER TASK CUSTOMER_INSERT RESUME;
+ALTER TASK CUSTOMER_INSERT SUSPEND;
+
+
+SELECT * FROM CUSTOMERS;
+
+TRUNCATE TABLE CUSTOMERS;
+
+#=========================================================
+
+-- Creating task.
+
+CREATE OR REPLACE TASK mytask_minute
+  WAREHOUSE = COMPUTE_WH,
+  SCHEDULE = '1 MINUTE'
+AS
+INSERT INTO CUSTOMERS(CREATE_DATE) VALUES(CURRENT_TIMESTAMP);
+
+CREATE OR REPLACE TASK mytask_hour
+  WAREHOUSE = COMPUTE_WH
+  SCHEDULE = 'USING CRON 00 21 * * * America/Los_Angeles'
+  TIMESTAMP_INPUT_FORMAT = 'YYYY-MM-DD HH24'
+AS
+INSERT INTO CUSTOMERS(CREATE_DATE) VALUES(CURRENT_TIMESTAMP);
+
+
+SELECT CURRENT_TIMESTAMP;
+
+SELECT * FROM CUSTOMERS;
+
+
+-- CRON : SCHEDULE AT SPECIFIC TIME.
+
+# __________ minute (0-59)
+# | ________ hour (0-23)
+# | | ______ day of month (1-31, or L)
+# | | | ____ month (1-12, JAN-DEC)
+# | | | | _ day of week (0-6, SUN-SAT, or L)
+# | | | | |
+# | | | | |
+  * * * * *
+
+-- Check sheduled tasks.
+
+SHOW TASKS;
+
+-- Put task in the shedule.
+
+alter task mytask_hour resume;
+
+alter task mytask_minute SUSPEND;

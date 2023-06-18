@@ -1,0 +1,22 @@
+1. Whcih type of storage is used in snowflake and where the data stored internally?
+2. What fields you can choose as cluster keys for a table in snowflake?
+3. Write the syntax to specify cluster keys for a table.
+
+4. What are the storage plans available in Snowflake?
+5. Write a copy command to process below JSON file data. file_name 'languages.json'
+	{
+		"name":"Krishna",
+		"gender":"Male",
+		"languages":["English","Telugu","Hindi"],
+		"Phone":{
+					"Work": 123456789,
+					"Mobile": 987654321
+				}
+	  }
+
+6. What is the diff between external stage and internal stage?
+7. What are the external stages supported by snowflake? (Which cloud providers)
+
+8. Write a command to push a file from local system to user stage in snowflake.
+9. Write a query to create to list all files under the table stage for table 'ORDER_DTL'
+10. Write a query to create named internal stage object.

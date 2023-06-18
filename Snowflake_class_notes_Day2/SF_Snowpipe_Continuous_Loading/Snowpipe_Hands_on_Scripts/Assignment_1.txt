@@ -1,0 +1,15 @@
+1. Metadata management is done by which layer of snowflake?
+2. What is a virtual warehouse in snowflake?
+3. How can you decide your virtual warehouse size and number of clusters?
+4. If I am using 'M' size virtaual warehouse with 5 clusters, howmany credits will be consumed for an hour?
+
+We have a file in AWS with name 'Employee_Data.csv' and below is the first line of the file.
+empid|first_name|last_name|salary|location|DOB
+
+5. Write a copy query just to fetch empid and Full_Name(Combination of first name and last name).
+6. Write the query to create file format object for above file.
+7. Write a query to create a stage object for accessing above file by using storege integration object 'nic_aws_si'.
+8. Write a query to process all employee files located in aws in 'nics3bucket' in input/csv/ folder.
+9. Write a copy query to load the data by ignoring the errors and also query should not fail if the column length exceeds the filed length in the table.
+10. Write a query to calculate the age of the employees in years based on his DOB (Try in google for date functions).
+

@@ -1,0 +1,10 @@
+1. How do we do continuous loading in snowflake?
+2. Write a query to create snowpipe named 'amazonpipe' to load the files from 'aws/pipes' folder
+3. How to pass snowpipe execution?
+4. Explain about caching in snowflake? howmany types and what is the advantage?
+5. What is the retention period in snowflake and what is the retention period of Transient tables?
+6. I have 1000 records in a table, by mistake I have deleted 200 records from the table. After 1 day I realized I need those deleted records. Write a query to to display only those 200 deleted records. I dont want to see all 1000 records. (Take google help if needed)
+7. Write a query to clone entire schema named 'STAGING_TABLES'
+8. Tell me one realtime use case where Cloning is useful
+9. What is the purpose of creating Transient tables in snowflake?
+10. What are the storage types available in snowflake and how can we choose storage type for our project?
